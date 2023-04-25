@@ -1,5 +1,7 @@
 #!/bin/bash
 
+#https://exercism.org/tracks/bash/exercises/resistor-color-duo
+
 main()
 {
 	case "$1" in 
