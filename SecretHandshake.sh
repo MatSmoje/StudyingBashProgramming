@@ -7,21 +7,30 @@ main()
 	for (( i=${#val}-1; i>=0; i-- )); do
 		if [[ ${val:$i:1} -eq 1 ]]; then 
 			if [[ $counter -eq 0 ]]; then
-				echo "wink"
+				opt="wink,"
 			elif [[ $counter -eq 1 ]]; then
-				echo "double blink"
+				opt="${opt}double blink,"
 			elif [[ $counter -eq 2 ]]; then
-				echo "close you eyes"
+				opt="${opt}close your eyes,"
 			elif [[ $counter -eq 3 ]]; then
-				echo "jump"
+				opt="${opt}jump"
 			elif [[ $counter -eq 4 ]]; then 
-				echo "Reverse the order of the operations in the secret handshake."
+				opt=$(echo $opt | awk -F"," '{for(i=NF;i>1;i--)printf "%s,",$i;print $1}')
 			else
 				echo "error..."
 			fi
 		fi
 		counter=$((counter+1))
 	done
+	if [[ ${opt:${#opt}-1:1} == , ]];then
+		echo ${opt:0:-1}
+        elif [[ ${opt:0:1} == , ]];then
+            echo ${opt:1:${#opt}}
+
+	else
+		echo $opt
+
+	fi
 }
 binary()
 {
@@ -32,7 +41,7 @@ binary()
 		number=$((number/2))
 		result="$result$binaryNumber"
 	done
-	if [ $number = 1 ]; then
+	if [[ $number -eq 1 ]]; then
 		binaryNumber="1"
 		result="$result$binaryNumber"
 	fi
