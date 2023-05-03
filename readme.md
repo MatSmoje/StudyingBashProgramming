@@ -10,9 +10,8 @@ I am currently doing some exercises from the webpage: https://exercism.org/
 - $((1+1))  
 - $((x=1, y=1, d=x+y))
 
-## Notes
-### Excercises
-#### Darts.sh  
+## Excercises
+### Darts.sh  
 I believe this excercise was not too easy. I had to solve how to validate my input arguments generating a regex patron. 
  - Concepts
     - Conditional
@@ -21,7 +20,7 @@ I believe this excercise was not too easy. I had to solve how to validate my inp
     - bc *(basic calculator)*: provides the functionality of scientific calculator
     - errors 
 
-#### DungAndDragsCharacter.sh
+### DungAndDragsCharacter.sh
  - Concepts 
     - Conditional  
     - Functions
