@@ -11,14 +11,22 @@ I am currently doing some exercises from the webpage: https://exercism.org/
 - $((x=1, y=1, d=x+y))
 
 ## Notes
-
-- Darts.sh  
+### Excercises
+#### Darts.sh  
 I believe this excercise was not too easy. I had to solve how to validate my input arguments generating a regex patron. 
-    - Concepts
-        - Conditional
-        - Regex
-        - Functions
-        - bc *(basic calculator)*: provides the functionality of scientific calculator
-        - errors 
+ - Concepts
+    - Conditional
+    - Regex
+    - Functions
+    - bc *(basic calculator)*: provides the functionality of scientific calculator
+    - errors 
+
+#### DungAndDragsCharacter.sh
+ - Concepts 
+    - Conditional  
+    - Functions
+    - tr, sort, cut, |
+    - random
+    - bucle for
 
 
