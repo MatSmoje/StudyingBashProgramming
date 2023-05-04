@@ -32,7 +32,20 @@ normalize()
 }
 analize()
 {
+
+
+
     echo "Test $phrase test"
+    for ((i=0;i<=${#phrase};i++)); do
+
+        if [[ "${phrase:$i:1}" == "(" ]]; then close=")";
+        elif [[ "${phrase:$i:1}" == "{" ]]; then close="}"; 
+        elif [[ "${phrase:$i:1}" == "[" ]]; then close="]"; 
+        else close=""
+        fi
+        
+        echo "${phrase:$i:1} - $close"
+    done
 }
 
 main "$@"
