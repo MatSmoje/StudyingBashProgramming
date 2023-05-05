@@ -32,20 +32,61 @@ normalize()
 }
 analize()
 {
-
-
-
-    echo "Test $phrase test"
-    for ((i=0;i<=${#phrase};i++)); do
+    state="true"
+    sup="$((${#phrase}-1))"
+    if [[ ${#phrase}%2 -ne 0  ]]; then 
+        state="false"
+    fi
+    
+    for ((i=0;i<${#phrase};i++)); do
 
         if [[ "${phrase:$i:1}" == "(" ]]; then close=")";
         elif [[ "${phrase:$i:1}" == "{" ]]; then close="}"; 
         elif [[ "${phrase:$i:1}" == "[" ]]; then close="]"; 
         else close=""
         fi
-        
-        echo "${phrase:$i:1} - $close"
+
+        ${phrase:$i:1}="ñ"
+        break
     done
+    
+    echo "${phrase}"
+
+    if [[ $state != "false" ]]; then 
+        echo "true"
+    else
+        echo "false"
+    fi
+}
+test()
+{
+ string="[()]()[]"
+
+ for ((i=0;i<${#string};i++));do
+
+    echo "largo string ${#string} - $string"
+
+    if [[ "${#string}" -le 0 ]]; then 
+        echo "true"
+        break
+    fi
+
+    if [[ "${string:$i:1}" == "(" ]]; then close=")";
+    elif [[ "${string:$i:1}" == "{" ]]; then close="}"; 
+    elif [[ "${string:$i:1}" == "[" ]]; then close="]"; 
+    else close=""
+    fi
+    
+    for ((j=$i;j<${#string};j++ )); do
+        echo "$j"
+        if [[ "${string:$j:1}" == "$close" ]]; then
+            echo "Dentro de 2do for $string"
+            string="hola"
+        fi
+    done
+ done
+
+
 }
 
-main "$@"
+test "$@"
