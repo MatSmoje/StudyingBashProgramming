@@ -4,6 +4,7 @@ main()
 {
     local phrase="$1"
     phrase=$(normalize);
+    echo "Frase a analizar $phrase"
     result=$(analize)
     echo "$result"
 }
@@ -21,27 +22,29 @@ normalize()
 analize()
 {
     string=$phrase
-    for ((i=0;i<${#string};i++));do
-        if [[ "$flag" == 1 ]]; then
+    for ((i=0;i<=${#string};i++));do
+        if [[ "$flag" == "1" ]]; then
             i=0
             flag=0
         fi
-
+        echo "entra a for con palabra() xq $i ${#string}"
         if [[ "${string:$i:1}" == "(" ]]; then close=")";
         elif [[ "${string:$i:1}" == "{" ]]; then close="}"; 
         elif [[ "${string:$i:1}" == "[" ]]; then close="]"; 
         else close="none"
         fi
         i2=$(($i+1))
-    
+        echo "-->-->  $string --> ${string:$i:1}- $close"
         if [[ "${string:$i2:1}" == "$close" ]]; then 
             #echo "$i - ${string:0:$i}${string:$i2+1:${#string}}"
             string="${string:0:$i}${string:$i2+1:${#string}}"
-            flag=1
+            echo "$string - asdas $i - ${#string}"
+            flag="1"
         fi
     
      done
 
+    echo "${#string} - $string"
     if [[ ${#string} -eq 0 ]]; then 
         echo "true"
     else
