@@ -1,5 +1,7 @@
 #!/bin/bash
 
+#https://exercism.org/tracks/bash/exercises/matching-brackets
+
 main()
 {
     local phrase="$1"

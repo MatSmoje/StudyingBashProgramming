@@ -35,3 +35,10 @@ I think it was a rather hard excercise due the algorithm, however, after some it
     - for
     - conditionals
     - regex
+
+## Proverb.sh
+It was easy
+- Concepts
+    - for  
+    - if  
+    - args
