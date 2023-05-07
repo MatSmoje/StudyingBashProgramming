@@ -28,4 +28,10 @@ I believe this excercise was not too easy. I had to solve how to validate my inp
     - random
     - bucle for
 
-
+### Matchingbrackets.sh
+I think it was a rather hard excercise due the algorithm, however, after some iteration, I was able to solve this problem :)!  
+- Concepts
+    - fuctions
+    - for
+    - conditionals
+    - regex
