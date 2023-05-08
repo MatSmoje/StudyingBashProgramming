@@ -36,9 +36,21 @@ I think it was a rather hard excercise due the algorithm, however, after some it
     - conditionals
     - regex
 
-## Proverb.sh
+### Proverb.sh
 It was easy
 - Concepts
     - for  
     - if  
     - args
+
+### Luhn.sh
+The webpage said it was medium level. I don't think that. Actually, I think it was easier than other tagged as easy.
+- Concepts
+    - functions
+    - tr
+    - if
+    - for 
+    - regex 
+
+
+
