@@ -52,5 +52,12 @@ The webpage said it was medium level. I don't think that. Actually, I think it w
     - for 
     - regex 
 
+### Resistor_color_trio.sh
+It's not hard! 
+- Concepts
+    - Case
+    - if
+    - for
+    - arithmetic operations
 
 
