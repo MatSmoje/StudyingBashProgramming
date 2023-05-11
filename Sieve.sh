@@ -5,12 +5,24 @@
 main()
 {
     vals=($(seq 2 1 $1)) 
+    echo "${vals[@]}"
+    #delete=8
+    #echo ${vals[@]/$delete}
 
-    for i in "${vals[@]}"
-    do
-        echo "$i"
-    done
+    local rule
+    local vals
 
 }
+delete()
+{
+    vals=($(seq 2 1 $1)) 
+    counter=0
+    for i in "${vals[@]}"
+    do
+        #delete=2
+        echo "i $i - cntr $counter"
+        counter=$(($counter+1))
+    done
+}
 
-main "$@"
+delete "$@"
