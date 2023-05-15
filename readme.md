@@ -4,7 +4,14 @@ I am currently doing some exercises from the webpage: https://exercism.org/
 
 ## Useful 
 - \$RANDOM: Return random number. If you want to get random between a range, you can do $(($RANDOM%26)), where 26 is the upper range + 1.
-
+- find:
+    - -name 
+    - -iname 
+    - -size +500G k M
+    - -perm 777 -700 /700
+    - -use 
+    - -group
+    - -type f d l
 ### Operation:
 #### Arithmetic Operation:
 - $((1+1))  
