@@ -12,6 +12,13 @@ I am currently doing some exercises from the webpage: https://exercism.org/
     - -use 
     - -group
     - -type f d l
+    - -exec 
+
+- bash debugging: 
+    - #!/bin/bash -xv
+- get PID number of current process
+    - $$
+
 ### Operation:
 #### Arithmetic Operation:
 - $((1+1))  
