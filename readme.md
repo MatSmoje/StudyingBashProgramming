@@ -81,4 +81,9 @@ Well, it took more time than I expected. Firstly I read bad the instructions and
     - nested for
     - arrays
     - if
+### Leap
+Really easy
+- Concepts
+    - if else
+    - errors (exit 1)
 
