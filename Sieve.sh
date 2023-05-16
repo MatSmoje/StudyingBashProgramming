@@ -5,42 +5,45 @@
 main()
 {
     vals=($(seq 2 1 $1)) 
-    echo "${vals[@]}"
-    #delete=8
-    #echo ${vals[@]/$delete}
+    local output=($(seq 2 1 $1))
+    local j
 
-    local rule
-    local vals
-
-}
-delete()
-{
-    vals=($(seq 2 1 $1)) 
-    output="${vals[@]}"
-
-    for j in 2 3 5
+    for j in ${vals[@]}
     do
+        if [[ $(inlist) -eq 1 ]]; then
+            continue
+        fi
+
         counter=0
+        cnt=0
         for i in "${vals[@]}"
         do
-            if [[ "$j" -eq 2 && "$counter" -eq 2  ]]; then
-                delete=$i
-                output=( ${output[@]/$delete} )
-                counter=0
-            elif [[ "$j" -eq 3 && "$counter" -eq 4  ]]; then
-                delete=$i
-                output=( ${output[@]/$delete} )
+            if [[ "$i" -le "$j" ]]; then
                 counter=1
-            elif [[ "$j" -eq 5 && "$counter" -eq 6  ]]; then
-                delete=$i
-                output=( ${output[@]/$delete} )
-                counter=2
+                cnt=$(($cnt+1))
+                continue
+            elif [[ "$j" -eq "$counter" ]]; then
+                unset 'output[cnt]'
+                counter=0
             fi
             counter=$(($counter+1))
-            echo "${output[@]}"
+            cnt=$(($cnt+1))
         done
     done
     echo "${output[@]}"
 }
 
-delete "$@"
+inlist()
+{
+    notFound=1
+    for z in ${output[@]}
+    do
+        if [[ $z == $j  ]]; then
+            notFound=0
+            break
+        fi
+    done
+    echo "$notFound"
+}
+
+main "$@"

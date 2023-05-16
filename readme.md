@@ -74,4 +74,11 @@ It's not hard!
     - for
     - arithmetic operations
 
+### Sieve
+Well, it took more time than I expected. Firstly I read bad the instructions and I think it was quite hard.
+- Concepts
+    - Functions
+    - nested for
+    - arrays
+    - if
 
