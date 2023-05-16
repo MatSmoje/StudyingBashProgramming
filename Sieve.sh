@@ -1,6 +1,8 @@
 #!/bin/bash
 
 # https://exercism.org/tracks/bash/exercises/sieve
+# Wikipedia Sieve https://en.wikipedia.org/wiki/Sieve_of_Eratosthenes
+
 
 main()
 {
