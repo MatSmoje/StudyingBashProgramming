@@ -4,30 +4,35 @@
 
 main()
 {
+    a=$(echo "$2" | bc)
+    b=$(echo "$3" | bc)
+    c=$(echo "$4" | bc)
+
 
     case "$1" in
         equilateral)
-        if [[ $(($2+$3)) -le $4 || $(($3+$4)) -le $2 || $(($2+$4)) -le $3  ]]; then
+
+        if [[ $(echo "$a+$b <= $c" | bc) -eq 1 || $(echo "$b+$c <= $a" | bc) -eq 1 || $(echo "$a+$c <= $b" | bc) -eq 1 ]]; then
             echo "false"
-        elif [[ $2 -eq $3 && $3 -eq $4  ]]; then
+        elif [[ $(echo "$a == $c" | bc) -eq 1  && $(echo "$b == $c" | bc) -eq 1 ]]; then
             echo "true"
         else
             echo "false"
         fi
         ;;
         isosceles)
-        if [[ $(($2+$3)) -le $4 || $(($3+$4)) -le $2 || $(($2+$4)) -le $3  ]]; then
+        if [[ $(echo "$a+$b <= $c" | bc) -eq 1 || $(echo "$b+$c <= $a" | bc) -eq 1 || $(echo "$a+$c <= $b" | bc) -eq 1 ]]; then
             echo "false"
-        elif [[ $2 -eq $3 ||  $3 -eq $4  || $2 -eq $4 ]]; then
+        elif [[ $(echo "$a == $b" | bc) -eq 1 || $(echo "$b == $c" | bc) -eq 1 || $(echo "$a == $c" | bc) -eq 1 ]]; then
             echo "true"
         else
             echo "false"
         fi
         ;;
         scalene)
-        if [[ $(($2+$3)) -le $4 || $(($3+$4)) -le $2 || $(($2+$4)) -le $3  ]]; then
+        if [[ $(echo "$a+$b <= $c" | bc) -eq 1 || $(echo "$b+$c <= $a" | bc) -eq 1 || $(echo "$a+$c <= $b" | bc) -eq 1 ]]; then
             echo "false"
-        elif [[ $2 -ne $3 && $3 -ne $4 && $2 -ne $4 ]]; then
+        elif [[ $(echo "$a!=$b" |bc) -eq 1 && $(echo "$b!=$c" |bc) -eq 1 && $(echo "$a!=$c" |bc) -eq 1 ]]; then
             echo "true"
         else
             echo "false"
