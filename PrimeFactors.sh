@@ -25,4 +25,10 @@ main()
     echo "$final" | sed s/\ $//
 
 }
+resolution2()
+{
+    givenNumber=$1
+    factor $givenNumber | cut -d' ' -f2-
+
+}
 main "$@"
