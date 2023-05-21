@@ -98,4 +98,10 @@ I liked that excercise!
     - array
     - clases ([:upper:]...)
     - for
-    
+
+### Triangle
+Easy :]
+- Concepts
+    - float numbers
+    - if
+    - case
