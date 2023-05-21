@@ -112,3 +112,9 @@ Easy
     - while
     - if
     - sed
+
+### difference_of_squares
+easy
+- Concepts
+    - for
+    - case
