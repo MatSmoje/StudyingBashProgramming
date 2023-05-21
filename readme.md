@@ -105,3 +105,10 @@ Easy :]
     - float numbers
     - if
     - case
+
+### Prime Factors
+Easy
+- Concepts
+    - while
+    - if
+    - sed
