@@ -114,7 +114,13 @@ Easy
     - sed
 
 ### difference_of_squares
-easy
+Easy
 - Concepts
     - for
     - case
+
+### nucleoide_count
+Easy
+- Concepts
+    - Case
+    - for
