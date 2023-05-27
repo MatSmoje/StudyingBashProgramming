@@ -124,3 +124,6 @@ Easy
 - Concepts
     - Case
     - for
+
+### clock
+I think it was hard in its logic 
