@@ -4,7 +4,7 @@
 main()
 {
 
-echo "This is the house that Jack built.
+rhyme="This is the house that Jack built.
 
 This is the malt
 that lay in the house that Jack built.
@@ -92,8 +92,18 @@ that tossed the dog
 that worried the cat
 that killed the rat
 that ate the malt
-that lay in the house that Jack built.
-" |  awk -vRS='\n\n' "NR>=$1 && NR<=$2"
+that lay in the house that Jack built."
+
+maxValue=$(echo "$rhyme" | awk -vRS= 'END{print NR}')
+if [[ "$1" -eq 0 || "$2" -gt "$maxValue" || "$1" -gt "$2" ]]; then
+    echo "invalid"
+    exit 1;
+fi
+
+for ((i=$1;i<=$2;i++)); do
+    asd="$(echo "$rhyme" | awk -v RS='' "NR==$i")"
+    printf '%s\n\n' "$asd"
+done
 }
 
 main "$@"
